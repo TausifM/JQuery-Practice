@@ -78,6 +78,9 @@
     <div id="flip-1">Click to slide down panel</div>
     <div id="panel-1">Hello world!</div>
 
+    <button id="callback">Hide</button>
+
+    <p id="callbackPara">This is a paragraph with little content.</p>
     <!-- By Using Downloaded JQuery File -->
     <script src="./jquery-3.6.0.js"></script>
     <script>
@@ -132,13 +135,31 @@
 
       // Stop Method JQuery
 
+      //   $(document).ready(function () {
+      //     $("#flip-1").click(function () {
+      //       $("#panel-1").slideDown(5000);
+      //       $("#panel-1").toggle();
+      //     });
+      //     $("#stop1").click(function () {
+      //       $("#panel-1").stop();
+      //     });
+      //   });
+
+      // Callback Method with and without  Ex -1
       $(document).ready(function () {
-        $("#flip-1").click(function () {
-          $("#panel-1").slideDown(5000);
-          $("#panel-1").toggle();
+        $("#callback").click(function () {
+          $("#callbackPara").hide("slow", function () {
+            alert("The paragraph is now hidden");
+          });
+          $("#callbackPara").toggle();
         });
-        $("#stop1").click(function () {
-          $("#panel-1").stop();
+      });
+
+      // Callback Ex-2 without Callback
+      $(document).ready(function () {
+        $("#callback").click(function () {
+          $("#callbackPara").hide(1000);
+          alert("The paragraph is now hidden");
         });
       });
     </script>
