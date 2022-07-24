@@ -17,7 +17,22 @@
         border: solid 1px #c3c3c3;
       }
 
-      #panel {
+      #panel-1 {
+        padding: 50px;
+        display: none;
+      }
+      #panel-1,
+      #flip-1 {
+        padding: 5px;
+        font-size: 18px;
+        text-align: center;
+        background-color: #555;
+        color: white;
+        border: solid 1px #666;
+        border-radius: 3px;
+      }
+
+      #panel-1 {
         padding: 50px;
         display: none;
       }
@@ -47,7 +62,7 @@
     <button id="flip">Click Me</button>
     <br />
 
-    <div
+    <!-- <div
       style="
         margin-top: 10px;
         background: #98bf21;
@@ -56,7 +71,12 @@
         position: absolute;
       "
       id="animate"
-    ></div>
+    ></div> -->
+
+    <button id="stop1">Stop sliding</button>
+
+    <div id="flip-1">Click to slide down panel</div>
+    <div id="panel-1">Hello world!</div>
 
     <!-- By Using Downloaded JQuery File -->
     <script src="./jquery-3.6.0.js"></script>
@@ -102,11 +122,23 @@
 
       // Animate Method
 
+      //   $(document).ready(function () {
+      //     $("#flip").click(function () {
+      //       $("#animate").animate({
+      //         height: "toggle",
+      //       });
+      //     });
+      //   });
+
+      // Stop Method JQuery
+
       $(document).ready(function () {
-        $("#flip").click(function () {
-          $("#animate").animate({
-            height: "toggle",
-          });
+        $("#flip-1").click(function () {
+          $("#panel-1").slideDown(5000);
+          $("#panel-1").toggle();
+        });
+        $("#stop1").click(function () {
+          $("#panel-1").stop();
         });
       });
     </script>
