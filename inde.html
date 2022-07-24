@@ -5,35 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>$ Practice</title>
-     <!-- By Using JQuery CDN -->
+    <!-- By Using JQuery CDN -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   </head>
   <body>
     <h1>JQuery Practice</h1>
     <div>
-      <p>
+      <p id="myPara">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+        blanditiis numquam fuga optio quaerat sunt? Quidem nulla ullam labore
+        nihil animi? Dignissimos minus 
+      </p>
+      <p id="myPara-2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+        blanditiis numquam fuga optio quaerat sunt? Quidem nulla ullam labore
+        nihil animi? Dignissimos minus quos quae illum dicta nisi beatae ea.
+      </p>
+      <p id="myPara-3">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
         blanditiis numquam fuga optio quaerat sunt? Quidem nulla ullam labore
         nihil animi? Dignissimos minus quos quae illum dicta nisi beatae ea.
       </p>
     </div>
-    <button>Click Me</button>
+    <button id="paraButton">Click Me</button>
     <!-- By Using Downloaded JQuery File -->
     <script src="./jquery-3.6.0.js"></script>
     <script>
-    // Element select method for multiple Events
-     $(document).ready(function(){
-         $("button").on({
-             click : function() {
-                $("p").hide();
-             },
-             dblclick : function() {
-                $("p").show();
-             }
-         })
-    // Element select method for single Event
-        $("button").click(function(){
-            $('p').hide();
+      // Element select method for multiple Events
+      //  $(document).ready(function(){
+      //      $("button").on({
+      //          click : function() {
+      //             $("p").hide();
+      //          },
+      //          dblclick : function() {
+      //             $("p").show();
+      //          }
+      //      })
+      // // Element select method for single Event
+      //     $("button").click(function(){
+      //         $('p').hide();
+      //     });
+      //   });
+
+      // Get Element by ID
+      $(document).ready(function () {
+        $("#paraButton").click(function () {
+          $("#myPara").toggle();
+        });
+      });
+      $(document).ready(function () {
+        $("#paraButton").click(function () {
+          $("#myPara").fadeIn();
+        //   $("#myPara-2").fadeIn("slow");
+        //   $("#myPara-3").fadeIn(3000);
         });
       });
     </script>
