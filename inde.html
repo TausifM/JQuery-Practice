@@ -7,20 +7,21 @@
     <title>$ Practice</title>
     <!-- By Using JQuery CDN -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <style> 
-        #panel, #flip {
-          margin-top: 20px;
-          padding: 5px;
-          text-align: center;
-          background-color: #e5eecc;
-          border: solid 1px #c3c3c3;
-        }
-        
-        #panel {
-          padding: 50px;
-          display: none;
-        }
-        </style>
+    <style>
+      #panel,
+      #flip {
+        margin-top: 20px;
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+      }
+
+      #panel {
+        padding: 50px;
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <h1>JQuery Practice</h1>
@@ -28,7 +29,7 @@
       <p id="myPara">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
         blanditiis numquam fuga optio quaerat sunt? Quidem nulla ullam labore
-        nihil animi? Dignissimos minus 
+        nihil animi? Dignissimos minus
       </p>
       <p id="myPara-2">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
@@ -44,6 +45,18 @@
     <button id="paraButton">Click Me</button>
     <br />
     <button id="flip">Click Me</button>
+    <br />
+
+    <div
+      style="
+        margin-top: 10px;
+        background: #98bf21;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+      "
+      id="animate"
+    ></div>
 
     <!-- By Using Downloaded JQuery File -->
     <script src="./jquery-3.6.0.js"></script>
@@ -65,28 +78,37 @@
       //   });
 
       // Get Element by ID
-    //   $(document).ready(function () {
-    //     $("#paraButton").click(function () {
-    //       $("#myPara").toggle();
-    //     });
-    //   });
-    //   $(document).ready(function () {
-    //     $("#paraButton").click(function () {
-    //       $("#myPara").fadeIn();
-    //     //   $("#myPara-2").fadeIn("slow");
-    //     //   $("#myPara-3").fadeIn(3000);
-    //     });
-    //   });
+      //   $(document).ready(function () {
+      //     $("#paraButton").click(function () {
+      //       $("#myPara").toggle();
+      //     });
+      //   });
+      //   $(document).ready(function () {
+      //     $("#paraButton").click(function () {
+      //       $("#myPara").fadeIn();
+      //     //   $("#myPara-2").fadeIn("slow");
+      //     //   $("#myPara-3").fadeIn(3000);
+      //     });
+      //   });
 
+      // // Slide Down with toggle
+      // $(document).ready(function(){
+      //     $('#flip').click(function(){
+      //         // $("#panel").slideDown("slow");
+      //         // $("#panel").slideUp("slow");
+      //         $("#panel").slideToggle("slow");
+      //     });
+      // });
 
-    // Slide Down with toggle
-    $(document).ready(function(){
-        $('#flip').click(function(){
-            // $("#panel").slideDown("slow")
-            // $("#panel").slideUp("slow")
-            $("#panel").slideToggle("slow")
-        })
-    })
+      // Animate Method
+
+      $(document).ready(function () {
+        $("#flip").click(function () {
+          $("#animate").animate({
+            height: "toggle",
+          });
+        });
+      });
     </script>
   </body>
 </html>
