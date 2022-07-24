@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>$ Practice</title>
+     <!-- By Using JQuery CDN -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   </head>
   <body>
     <h1>JQuery Practice</h1>
@@ -16,6 +18,24 @@
       </p>
     </div>
     <button>Click Me</button>
+    <!-- By Using Downloaded JQuery File -->
     <script src="./jquery-3.6.0.js"></script>
+    <script>
+    // Element select method for multiple Events
+     $(document).ready(function(){
+         $("button").on({
+             click : function() {
+                $("p").hide();
+             },
+             dblclick : function() {
+                $("p").show();
+             }
+         })
+    // Element select method for single Event
+        $("button").click(function(){
+            $('p').hide();
+        });
+      });
+    </script>
   </body>
 </html>
